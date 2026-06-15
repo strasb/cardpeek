@@ -1,0 +1,46 @@
+name: Build Linux
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y \
+            autoconf \
+            make \
+            libglib2.0-dev \
+            libglib2.0-bin \
+            libgtk-3-dev \
+            libgdk-pixbuf2.0-dev \
+            liblua5.2-dev \
+            libcurl4-openssl-dev \
+            libssl-dev \
+            libpcsclite-dev \
+            libreadline-dev
+
+      - name: Build
+        run: |
+          autoreconf --install
+          ./configure
+          make
+
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cardpeek-linux
+          path: cardpeek
+          if-no-files-found: error
