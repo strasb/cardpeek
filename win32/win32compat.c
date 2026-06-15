@@ -101,7 +101,7 @@ const char *pcsc_stringify_error(long err)
 		index = err&0xFF;
 		if (index<0x30)
 			return PCSC_ERROR[index];
-		if (index>=0x66 || index<=0x69)
+		if (index>=0x66 && index<=0x69)
 			return PCSC_ERROR[index-0x66+0x30];
 	}
 	else if (err<1700)

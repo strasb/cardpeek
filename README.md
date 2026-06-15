@@ -26,11 +26,16 @@ It can also read the following cards with limited interpretation of data:
 
 ## Build
 
-**!!! Produced binaries do not run yet - See [issue #1](https://github.com/ipamo/cardpeek/issues/1) !!!**
+[![Build Linux](https://github.com/strasb/cardpeek/actions/workflows/linux-build.yml/badge.svg)](https://github.com/strasb/cardpeek/actions/workflows/linux-build.yml)
+[![Build Windows](https://github.com/strasb/cardpeek/actions/workflows/windows-build.yml/badge.svg)](https://github.com/strasb/cardpeek/actions/workflows/windows-build.yml)
+
+**⚠️ Produced Windows binaries do not run yet - See [issue #1](https://github.com/ipamo/cardpeek/issues/1)**
 
 - [Build instructions for Debian](doc/build-debian.md), either for the local Debian host, or for cross-compilation to Windows using mingw-w64.
 - [Build instructions for Windows](doc/build-windows.md), using msys2.
 - [Specific instructions for FreeBSD](doc/build-freebsd.md) in case of errors.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute.
 
 ## Usage
 

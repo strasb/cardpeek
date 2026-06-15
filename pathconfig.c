@@ -58,7 +58,7 @@ int path_config_init(void)
 #ifndef _WIN32
     home_dir = getenv("HOME");
 #else
-    home_dir = getenv("USERDATA");
+    home_dir = getenv("APPDATA");
     if (home_dir==NULL)
         home_dir = getenv("USERPROFILE");
 #endif
